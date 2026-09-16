@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café com Bolo &amp; Cia — Cafeteria Artesanal &amp; Confeitaria no Méier</title>
+  <meta name="description" content="A cafeteria mais acolhedora do Méier. Bolos caseiros fofinhos saídos do forno todo dia, o famoso Cookie Shot, cafés especiais, salgados finos e encomendas de kits festa na Rua Carolina Méier, 38.">
+  <meta property="og:title" content="Café com Bolo &amp; Cia · O Cantinho Mais Doce do Méier">
+  <meta property="og:description" content="Bolos artesanais de verdade, cafés especiais, o exclusivo Cookie Shot e aconchego no coração do Méier.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80">
+  <link rel="icon" href="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=64&q=80" sizes="32x32">
+
+  <!-- Google Fonts: Fraunces (Editorial gastronômico afetuoso) + Plus Jakarta Sans (Moderna e legível) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-heading: 'Fraunces', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Paleta Gastronômica Aconchegante */
+      --bg-cream: #FCF9F5;
+      --bg-white: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F6EFE6;
+      --bg-warm: #FBF4EA;
+
+      --text-espresso: #241510;
+      --text-body: #4A352F;
+      --text-muted: #78625A;
+      --text-light: #A48D85;
+
+      --accent-caramel: #C87D43;
+      --accent-caramel-hover: #B06B34;
+      --accent-caramel-soft: #F9EEDB;
+      
+      --accent-berry: #BE123C;
+      --accent-berry-soft: #FFE4E6;
+
+      --accent-green: #15803D;
+      --accent-green-soft: #DCFCE7;
+
+      --gold-star: #F59E0B;
+
+      --border-soft: #EFE4D6;
+      --border-card: rgba(200, 125, 67, 0.14);
+
+      --shadow-sm: 0 2px 8px rgba(36, 21, 16, 0.04);
+      --shadow-md: 0 10px 25px -4px rgba(36, 21, 16, 0.07), 0 4px 6px -2px rgba(36, 21, 16, 0.03);
+      --shadow-lg: 0 20px 40px -6px rgba(36, 21, 16, 0.1), 0 0 0 1px rgba(200, 125, 67, 0.08);
+      --shadow-warm: 0 12px 35px rgba(200, 125, 67, 0.18);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-pill: 9999px;
+
+      --container: 1180px;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-cream);
+      color: var(--text-body);
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      line-height: 1.6;
+      background-color: var(--bg-cream);
+      color: var(--text-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Badges & Utilitários Visuais */
+    .badge-aroma {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: var(--accent-caramel-soft);
+      border: 1px solid rgba(200, 125, 67, 0.25);
+      color: var(--accent-caramel);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-star {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      background: #FEF3C7;
+      border: 1px solid #FDE68A;
+      color: #92400E;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
+      font-weight: 700;
+      color: var(--text-espresso);
+      line-height: 1.22;
+      margin-top: 0.65rem;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header h2 .highlight {
+      color: var(--accent-caramel);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       TOPBAR COM STATUS DE FORNOS LIGADOS
+       ============================================================ */
+    .topbar {
+      background: var(--text-espresso);
+      color: #EFE7DE;
+      font-size: 0.82rem;
+      padding: 0.5rem 0;
+    }
+
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .topbar-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #FCD34D;
+      font-weight: 700;
+    }
+
+    .topbar-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 6px #10B981;
+      display: inline-block;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .topbar-link {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #EFE7DE;
+      transition: color 0.2s;
+    }
+
+    .topbar-link:hover {
+      color: #FCD34D;
+    }
+
+    /* ============================================================
+       SITE HEADER FLUTUANTE
+       ============================================================ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(252, 249, 245, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-soft);
+      box-shadow: 0 4px 20px rgba(36, 21, 16, 0.04);
+      transition: all 0.25s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1.5rem;
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-caramel) 0%, #9B5828 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(200, 125, 67, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-text-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-espresso);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--accent-caramel);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-espresso);
+      font-size: 0.92rem;
+      font-weight: 600;
+      position: relative;
+      padding: 0.35rem 0;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-caramel);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-caramel);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .btn-header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: linear-gradient(135deg, var(--accent-caramel) 0%, #AD5C20 100%);
+      color: #FFFFFF;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(200, 125, 67, 0.28);
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .btn-header-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(200, 125, 67, 0.4);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-soft);
+      color: var(--text-espresso);
+      padding: 0.45rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ============================================================
+       HERO SECTION ACONCHEGANTE & SENSORIAL
+       ============================================================ */
+    .hero-section {
+      position: relative;
+      padding: 4.5rem 0 5.5rem;
+      background: radial-gradient(circle at 80% 20%, #F8EFE4 0%, var(--bg-cream) 70%);
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.12fr 0.95fr;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .hero-content {
+      max-width: 610px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.3rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-espresso);
+      letter-spacing: -0.025em;
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-title .highlight {
+      color: var(--accent-caramel);
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, var(--accent-caramel) 0%, #AD5C20 100%);
+      color: #FFFFFF;
+      font-size: 1.02rem;
+      font-weight: 700;
+      padding: 0.95rem 2rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 8px 24px rgba(200, 125, 67, 0.32);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(200, 125, 67, 0.45);
+      background: linear-gradient(135deg, #D4884E 0%, #B86326 100%);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(200, 125, 67, 0.3);
+      color: var(--text-espresso);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.95rem 1.85rem;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-caramel);
+      color: var(--accent-caramel);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-features-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .hero-feat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .feat-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-caramel-soft);
+      border: 1px solid rgba(200, 125, 67, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-caramel);
+      flex-shrink: 0;
+    }
+
+    .feat-text-box strong {
+      display: block;
+      color: var(--text-espresso);
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .feat-text-box span {
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    /* Hero Visual Card */
+    .hero-visual-card {
+      position: relative;
+    }
+
+    .hero-main-frame {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-lg), var(--shadow-warm);
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: #F4ECE1;
+    }
+
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-main-frame:hover .hero-photo-wrap img {
+      transform: scale(1.04);
+    }
+
+    /* Badges Flutuantes */
+    .float-badge-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-soft);
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      z-index: 2;
+      animation: floatSlow 4s ease-in-out infinite alternate;
+    }
+
+    .float-badge-card.top-right {
+      top: -18px;
+      right: -18px;
+      border-color: rgba(200, 125, 67, 0.35);
+    }
+
+    .float-badge-card.bottom-left {
+      bottom: -18px;
+      left: -18px;
+      border-color: rgba(190, 18, 60, 0.25);
+      animation-delay: -2s;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-8px); }
+    }
+
+    .float-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .float-icon.caramel {
+      background: var(--accent-caramel-soft);
+      color: var(--accent-caramel);
+    }
+
+    .float-icon.berry {
+      background: var(--accent-berry-soft);
+      color: var(--accent-berry);
+    }
+
+    .float-text strong {
+      display: block;
+      color: var(--text-espresso);
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .float-text span {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    /* ============================================================
+       DESTAQUE VIRAL: O FAMOSO COOKIE SHOT
+       ============================================================ */
+    .cookie-shot-section {
+      padding: 5.5rem 0;
+      background: linear-gradient(180deg, #FBF4EA 0%, #FFFFFF 100%);
+      border-bottom: 1px solid var(--border-soft);
+      position: relative;
+    }
+
+    .cookie-shot-banner {
+      background: #FFFFFF;
+      border: 2px solid rgba(200, 125, 67, 0.25);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      align-items: center;
+      gap: 3.5rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cookie-shot-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(200, 125, 67, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cookie-img-box {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-soft);
+    }
+
+    .cookie-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .cookie-img-box:hover img {
+      transform: scale(1.05);
+    }
+
+    .cookie-shot-content h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      color: var(--text-espresso);
+      line-height: 1.2;
+      margin-top: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .cookie-shot-content h3 span {
+      color: var(--accent-caramel);
+      font-style: italic;
+    }
+
+    .cookie-shot-content p {
+      color: var(--text-body);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .cookie-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .cookie-step-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      text-align: center;
+    }
+
+    .cookie-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-caramel);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.6rem;
+    }
+
+    .cookie-step-card h5 {
+      color: var(--text-espresso);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .cookie-step-card span {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      line-height: 1.35;
+      display: block;
+    }
+
+    /* ============================================================
+       CARDÁPIO ARTESANAL COM ABAS INTERATIVAS
+       ============================================================ */
+    .menu-section {
+      padding: 6rem 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .menu-filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .menu-tab-btn {
+      padding: 0.65rem 1.45rem;
+      border-radius: var(--radius-pill);
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      color: var(--text-espresso);
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .menu-tab-btn:hover {
+      border-color: var(--accent-caramel);
+      color: var(--accent-caramel);
+    }
+
+    .menu-tab-btn.active {
+      background: linear-gradient(135deg, var(--accent-caramel) 0%, #AD5C20 100%);
+      color: #FFFFFF;
+      border-color: transparent;
+      box-shadow: 0 4px 15px rgba(200, 125, 67, 0.3);
+    }
+
+    .menu-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(200, 125, 67, 0.35);
+    }
+
+    .menu-card-img-box {
+      position: relative;
+      aspect-ratio: 16/11;
+      background: #F4ECE1;
+      overflow: hidden;
+    }
+
+    .menu-card-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .menu-card:hover .menu-card-img-box img {
+      transform: scale(1.08);
+    }
+
+    .menu-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(200, 125, 67, 0.2);
+      color: var(--accent-caramel);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .menu-tag.hot {
+      color: var(--accent-berry);
+      background: var(--accent-berry-soft);
+      border-color: rgba(190, 18, 60, 0.2);
+    }
+
+    .menu-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .menu-card-cat {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-caramel);
+      margin-bottom: 0.35rem;
+    }
+
+    .menu-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-espresso);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.35rem;
+    }
+
+    .menu-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .menu-price {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-espresso);
+    }
+
+    .menu-price span {
+      font-size: 0.78rem;
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .btn-menu-pedir {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-caramel-soft);
+      border: 1px solid rgba(200, 125, 67, 0.3);
+      color: var(--accent-caramel);
+      padding: 0.5rem 1.15rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .btn-menu-pedir:hover {
+      background: var(--accent-caramel);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(200, 125, 67, 0.3);
+    }
+
+    /* ============================================================
+       SIMULADOR INTERATIVO DE ENCOMENDAS
+       ============================================================ */
+    .calculator-section {
+      padding: 6rem 0;
+      background: var(--bg-cream);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .calc-card-container {
+      background: #FFFFFF;
+      border: 2px solid rgba(200, 125, 67, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .calc-header {
+      text-align: center;
+      margin-bottom: 2.75rem;
+    }
+
+    .calc-header h3 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      color: var(--text-espresso);
+      margin-top: 0.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .calc-header p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .calc-field-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .calc-field-group label {
+      display: block;
+      color: var(--text-espresso);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .calc-field-group select, .calc-field-group input {
+      width: 100%;
+      padding: 0.85rem 1.15rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      color: var(--text-espresso);
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    .calc-field-group select:focus, .calc-field-group input:focus {
+      outline: none;
+      border-color: var(--accent-caramel);
+      box-shadow: 0 0 0 3px rgba(200, 125, 67, 0.15);
+    }
+
+    .calc-result-box {
+      background: linear-gradient(135deg, #FBF4EA 0%, #F5E8D6 100%);
+      border: 1px solid rgba(200, 125, 67, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      text-align: center;
+    }
+
+    .calc-res-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-caramel);
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .calc-res-size {
+      font-family: var(--font-heading);
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-espresso);
+      margin-bottom: 0.35rem;
+    }
+
+    .calc-res-desc {
+      color: var(--text-body);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-calc-wpp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.95rem;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(135deg, var(--accent-green) 0%, #166534 100%);
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(21, 128, 61, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-calc-wpp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(21, 128, 61, 0.45);
+    }
+
+    /* ============================================================
+       O ESPAÇO & ACOLHIMENTO NO MÉIER
+       ============================================================ */
+    .space-section {
+      padding: 6rem 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .space-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .space-content h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.6vw, 2.75rem);
+      line-height: 1.22;
+      color: var(--text-espresso);
+      margin-top: 0.65rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .space-content p {
+      color: var(--text-body);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .space-amenities-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .space-amenity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .space-amenity-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--accent-caramel-soft);
+      color: var(--accent-caramel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .space-amenity-item strong {
+      display: block;
+      color: var(--text-espresso);
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .space-amenity-item span {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .space-gallery-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .space-mosaic-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-soft);
+    }
+
+    .space-mosaic-img.tall {
+      aspect-ratio: 4/6;
+    }
+
+    .space-mosaic-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .space-mosaic-img:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ============================================================
+       DEPOIMENTOS DO MÉIER (Google Reviews)
+       ============================================================ */
+    .reviews-section {
+      padding: 6rem 0;
+      background: var(--bg-cream);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .review-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(200, 125, 67, 0.3);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 0.25rem;
+      color: var(--gold-star);
+      margin-bottom: 1.25rem;
+    }
+
+    .review-text {
+      color: var(--text-body);
+      font-size: 1rem;
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 1.75rem;
+    }
+
+    .reviewer-profile {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .reviewer-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-caramel);
+    }
+
+    .reviewer-name {
+      color: var(--text-espresso);
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .reviewer-tag {
+      color: var(--accent-caramel);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       LOCALIZAÇÃO E ATENDIMENTO MÉIER
+       ============================================================ */
+    .location-section {
+      padding: 6rem 0;
+      background: #FFFFFF;
+    }
+
+    .location-card-container {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .location-info-pane {
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .location-info-pane h3 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: var(--text-espresso);
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .location-info-pane p {
+      color: var(--text-body);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .location-data-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .loc-data-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.95rem;
+    }
+
+    .loc-icon-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-caramel-soft);
+      border: 1px solid rgba(200, 125, 67, 0.25);
+      color: var(--accent-caramel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .loc-text-col strong {
+      display: block;
+      color: var(--text-espresso);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .loc-text-col span {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .location-map-pane {
+      min-height: 440px;
+      background: #F4ECE1;
+    }
+
+    .location-map-pane iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ============================================================
+       RODAPÉ ACONCHEGANTE
+       ============================================================ */
+    .site-footer {
+      background: var(--text-espresso);
+      color: #D3C4BC;
+      padding: 5rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand-col p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin: 1.15rem 0 1.5rem;
+      color: #D3C4BC;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-heading);
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links-list a {
+      color: #D3C4BC;
+      font-size: 0.9rem;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .footer-links-list a:hover {
+      color: #FCD34D;
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: #9C857B;
+    }
+
+    /* ============================================================
+       BOTÃO FLUTUANTE WHATSAPP & MODAL
+       ============================================================ */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .floating-whatsapp-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .floating-whatsapp-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-tooltip {
+      background: var(--text-espresso);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    /* Modal de Encomendas */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(36, 21, 16, 0.65);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-xl);
+      max-width: 500px;
+      width: 100%;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(36, 21, 16, 0.25);
+      transform: translateY(15px);
+      transition: transform 0.25s ease;
+    }
+
+    .modal-backdrop.open .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--text-espresso);
+    }
+
+    .modal-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      color: var(--text-espresso);
+      margin-bottom: 0.35rem;
+    }
+
+    .modal-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--text-espresso);
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      color: var(--text-espresso);
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-caramel);
+      box-shadow: 0 0 0 3px rgba(200, 125, 67, 0.15);
+    }
+
+    .btn-submit-modal {
+      width: 100%;
+      padding: 0.95rem;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(135deg, var(--accent-caramel) 0%, #AD5C20 100%);
+      color: #FFFFFF;
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin-top: 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      box-shadow: 0 4px 14px rgba(200, 125, 67, 0.3);
+    }
+
+    .btn-submit-modal:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(200, 125, 67, 0.4);
+    }
+
+    /* ============================================================
+       RESPONSIVIDADE (360px a 1024px)
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+      .cookie-shot-banner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+      .space-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .location-card-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topbar {
+        display: none;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-toggle {
+        display: block;
+      }
+      .hero-section {
+        padding: 3rem 0 3.5rem;
+      }
+      .hero-features-bar {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .hero-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-cta-group a {
+        text-align: center;
+      }
+      .float-badge-card {
+        position: static;
+        margin-top: 0.85rem;
+      }
+      .cookie-shot-banner {
+        padding: 2rem;
+      }
+      .cookie-steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .calc-card-container {
+        padding: 2rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .whatsapp-tooltip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR COM STATUS DE FORNOS LIGADOS -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-left">
+        <span class="topbar-badge">Fornos Ligados · Bolos Quentinhos Saindo</span>
+        <span>Rua Carolina Méier, 38 (Méier, Rio de Janeiro)</span>
+      </div>
+      <div class="topbar-right">
+        <a href="https://wa.me/5521988601401?text=Ol%C3%A1%2C%20Eug%C3%AAnio%21%20Vi%20o%20site%20e%20gostaria%20de%20fazer%20um%20pedido%20ou%20encomenda." target="_blank" rel="noopener" class="topbar-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          (21) 98860-1401
+        </a>
+        <span class="badge-star">★ 4.9 no Google (180+ avaliações)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo-wrap">
+        <div class="brand-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        </div>
+        <div class="brand-text-col">
+          <span class="brand-title">Café com Bolo &amp; Cia</span>
+          <span class="brand-sub">Cafeteria Artesanal · Méier</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#cookie-shot">Cookie Shot</a></li>
+          <li><a href="#encomendas">Encomendas</a></li>
+          <li><a href="#espaco">O Espaço</a></li>
+          <li><a href="#depoimentos">Avaliações</a></li>
+          <li><a href="#localizacao">Como Chegar</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/5521988601401?text=Ol%C3%A1%2C%20Eug%C3%AAnio%21%20Gostaria%20de%20fazer%20um%20pedido%20direto%20no%20Caf%C3%A9%20com%20Bolo." target="_blank" rel="noopener" class="btn-header-cta">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          Pedir no WhatsApp
+        </a>
+        <button class="mobile-menu-toggle" onclick="toggleMobileNav()" aria-label="Abrir Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tags">
+          <span class="badge-aroma">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Cafeteria Artesanal no Méier
+          </span>
+          <span class="badge-star">
+            ★ 4.9 no Google · Mais de 180 avaliações
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          O aroma de café fresco e o sabor de <span class="highlight">bolo de verdade</span> feito com amor.
+        </h1>
+
+        <p class="hero-desc">
+          Receitas artesanais que abraçam a alma: fatias fofinhas que acabaram de sair do forno, cafés especiais, o exclusivo <b>Cookie Shot</b> e encomendas caprichadas para festas e momentos doces na Rua Carolina Méier.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#cardapio" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            Ver Nosso Cardápio
+          </a>
+          <button class="btn-secondary" onclick="openOrderModal()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            Encomendar Bolo Inteiro
+          </button>
+        </div>
+
+        <div class="hero-features-bar">
+          <div class="hero-feat-item">
+            <div class="feat-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <div class="feat-text-box">
+              <strong>Fresco Todo Dia</strong>
+              <span>Bolos saídos do forno</span>
+            </div>
+          </div>
+
+          <div class="hero-feat-item">
+            <div class="feat-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+            </div>
+            <div class="feat-text-box">
+              <strong>Cookie Shot</strong>
+              <span>Exclusivo no bairro</span>
+            </div>
+          </div>
+
+          <div class="hero-feat-item">
+            <div class="feat-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </div>
+            <div class="feat-text-box">
+              <strong>Pet Friendly</strong>
+              <span>Espaço com carinho</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL COM FOTO APETITOSA E CARDS FLUTUANTES -->
+      <div class="hero-visual-card">
+        <div class="float-badge-card top-right">
+          <div class="float-icon caramel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+          </div>
+          <div class="float-text">
+            <strong>Cookie Shot da Casa</strong>
+            <span>Você bebe o café e come a xícara!</span>
+          </div>
+        </div>
+
+        <div class="hero-main-frame">
+          <div class="hero-photo-wrap">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80" alt="Fatia de bolo artesanal com calda generosa de chocolate no Café com Bolo Méier">
+          </div>
+        </div>
+
+        <div class="float-badge-card bottom-left">
+          <div class="float-icon berry">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="float-text">
+            <strong>Cenoura com Brigadeiro</strong>
+            <span>A calda cascuda mais elogiada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUE EXCLUSIVO: O FAMOSO COOKIE SHOT -->
+  <section class="cookie-shot-section" id="cookie-shot">
+    <div class="container">
+      <div class="cookie-shot-banner">
+        <div class="cookie-img-box">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80" alt="Cookie Shot - Xícara de cookie com café especial no Café com Bolo Méier">
+        </div>
+
+        <div class="cookie-shot-content">
+          <span class="badge-aroma">Exclusividade do Méier</span>
+          <h3>A Experiência do <span>Cookie Shot</span>: Você Toma o Café e Come a Xícara!</h3>
+          <p>
+            Uma criação apaixonante que conquistou a Zona Norte: uma xícara feita de massa artesanal de cookie com gotas de chocolate, impermeabilizada por dentro com chocolate nobre e servida com espresso quente ou brigadeiro cremoso de colher.
+          </p>
+
+          <div class="cookie-steps-grid">
+            <div class="cookie-step-card">
+              <div class="cookie-step-num">1</div>
+              <h5>Xícara de Cookie</h5>
+              <span>Massa crocante com chocolate</span>
+            </div>
+            <div class="cookie-step-card">
+              <div class="cookie-step-num">2</div>
+              <h5>Espresso Quente</h5>
+              <span>Café especial extraído na hora</span>
+            </div>
+            <div class="cookie-step-card">
+              <div class="cookie-step-num">3</div>
+              <h5>A Mordida Doce</h5>
+              <span>O chocolate derrete na boca</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5521988601401?text=Ol%C3%A1%21%20Quero%20provar%20o%20famoso%20Cookie%20Shot%20do%20Caf%C3%A9%20com%20Bolo." target="_blank" rel="noopener" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+            Quero Provar o Cookie Shot
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO ARTESANAL COM ABAS -->
+  <section class="menu-section" id="cardapio">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-aroma">Sabores Feitos com Afeto</span>
+        <h2>Nosso Cardápio <span class="highlight">Artesanal</span></h2>
+        <p>Receitas de família, ingredientes frescos de alta qualidade e opções que acolhem o seu dia a dia.</p>
+      </div>
+
+      <div class="menu-filter-bar">
+        <button class="menu-tab-btn active" onclick="filterMenu('todos', this)">Todos os Sabores</button>
+        <button class="menu-tab-btn" onclick="filterMenu('bolos', this)">Bolos &amp; Fatias</button>
+        <button class="menu-tab-btn" onclick="filterMenu('cafes', this)">Cafés &amp; Bebidas</button>
+        <button class="menu-tab-btn" onclick="filterMenu('salgados', this)">Salgados &amp; Almoço</button>
+        <button class="menu-tab-btn" onclick="filterMenu('encomendas', this)">Kits Festa &amp; Cestas</button>
+      </div>
+
+      <div class="menu-products-grid" id="menuProductsGrid">
+        <!-- ITEM 1: Bolo de Cenoura com Brigadeiro -->
+        <div class="menu-card" data-category="bolos">
+          <div class="menu-card-img-box">
+            <span class="menu-tag hot">Mais Pedido</span>
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="Bolo de Cenoura com Brigadeiro">
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-cat">Bolo do Dia</span>
+            <h3 class="menu-card-title">Cenoura com Calda Cascuda de Brigadeiro</h3>
+            <p class="menu-card-desc">Massa ultraleve e alaranjada, coberta com farta camada de brigadeiro artesanal com aquela casquinha crocante que estala na colher.</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">R$ 16,90 <span>/ fatia</span></div>
+              <a href="https://wa.me/5521988601401?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20uma%20fatia%20do%20Bolo%20de%20Cenoura%20com%20Brigadeiro." target="_blank" rel="noopener" class="btn-menu-pedir">
+                Pedir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 2: Red Velvet com Cream Cheese -->
+        <div class="menu-card" data-category="bolos">
+          <div class="menu-card-img-box">
+            <span class="menu-tag">Clássico</span>
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=700&q=80" alt="Bolo Red Velvet">
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-cat">Confeitaria Fina</span>
+            <h3 class="menu-card-title">Red Velvet com Frosting de Cream Cheese</h3>
+            <p class="menu-card-desc">Massa aveludada rubi com leve toque de cacau e recheio cremoso e refrescante de cream cheese com baunilha natural.</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">R$ 18,90 <span>/ fatia</span></div>
+              <a href="https://wa.me/5521988601401?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Red%20Velvet%20com%20Cream%20Cheese." target="_blank" rel="noopener" class="btn-menu-pedir">
+                Pedir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 3: Cookie Shot Artesanal -->
+        <div class="menu-card" data-category="cafes">
+          <div class="menu-card-img-box">
+            <span class="menu-tag hot">Exclusivo</span>
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=700&q=80" alt="Cookie Shot da Casa">
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-cat">Bebida Especial</span>
+            <h3 class="menu-card-title">O Famoso Cookie Shot</h3>
+            <p class="menu-card-desc">Xícara crocante de cookie com chocolate belga impermeabilizante por dentro, servida com espresso ou brigadeiro morno.</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">R$ 19,90 <span>/ un</span></div>
+              <a href="https://wa.me/5521988601401?text=Ol%C3%A1!%20Quero%20pedir%20o%20famoso%20Cookie%20Shot." target="_blank" rel="noopener" class="btn-menu-pedir">
+                Pedir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 4: Cappuccino Cremoso da Casa -->
+        <div class="menu-card" data-category="cafes">
+          <div class="menu-card-img-box">
+            <span class="menu-tag">Tradicional</span>
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80" alt="Cappuccino Cremoso da Casa">
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-cat">Cafeteria Especial</span>
+            <h3 class="menu-card-title">Cappuccino Italiano com Canela &amp; Cacau</h3>
+            <p class="menu-card-desc">Espresso tirado na hora com microespuma densa e aveludada de leite integral, finalizado com pitada de canela e raspas de chocolate.</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">R$ 14,50 <span>/ xícara</span></div>
+              <a href="https://wa.me/5521988601401?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Cappuccino%20da%20casa." target="_blank" rel="noopener" class="btn-menu-pedir">
+                Pedir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 5: Quiche Lorraine com Saladinha Fresca -->
+        <div class="menu-card" data-category="salgados">
+          <div class="menu-card-img-box">
+            <span class="menu-tag">Almoço Leve</span>
+            <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&w=700&q=80" alt="Quiche Lorraine">
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-cat">Salgados Finos</span>
+            <h3 class="menu-card-title">Quiche Lorraine com Saladinha da Horta</h3>
+            <p class="menu-card-desc">Massa brisée crocante amanteigada recheada com bacon dourado, queijo gruyère e creme suave, servida com folhas verdes frescas.</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">R$ 24,90 <span>/ prato</span></div>
+              <a href="https://wa.me/5521988601401?text=Ol%C3%A1!%20Quero%20pedir%20a%20Quiche%20Lorraine%20para%20o%20almo%C3%A7o." target="_blank" rel="noopener" class="btn-menu-pedir">
+                Pedir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 6: Torrada Petrópolis Artesanal -->
+        <div class="menu-card" data-category="salgados">
+          <div class="menu-card-img-box">
+            <span class="menu-tag">Café da Manhã</span>
+            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=80" alt="Torrada Petrópolis">
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-cat">Café da Tarde</span>
+            <h3 class="menu-card-title">Torrada Petrópolis Dourada na Manteiga</h3>
+            <p class="menu-card-desc">Fatia alta de pão artesanal tostada na chapa com manteiga especial de primeira qualidade e crosta dourada e crocante.</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">R$ 13,90 <span>/ porção</span></div>
+              <a href="https://wa.me/5521988601401?text=Ol%C3%A1!%20Quero%20pedir%20a%20Torrada%20Petr%C3%B3polis." target="_blank" rel="noopener" class="btn-menu-pedir">
+                Pedir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 7: Bolo de Nozes com Baba de Moça -->
+        <div class="menu-card" data-category="bolos encomendas">
+          <div class="menu-card-img-box">
+            <span class="menu-tag">Sofisticado</span>
+            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=700&q=80" alt="Bolo de Nozes com Baba de Moça">
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-cat">Festa &amp; Comemoração</span>
+            <h3 class="menu-card-title">Bolo de Nozes com Baba de Moça &amp; Doce de Leite</h3>
+            <p class="menu-card-desc">Massa perfumada de nozes chilenas moídas, recheada com baba de moça artesanal e doce de leite suave cozido na casa.</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">R$ 19,90 <span>/ fatia</span></div>
+              <a href="https://wa.me/5521988601401?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Bolo%20de%20Nozes." target="_blank" rel="noopener" class="btn-menu-pedir">
+                Pedir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 8: Cesta Especial de Café da Manhã -->
+        <div class="menu-card" data-category="encomendas">
+          <div class="menu-card-img-box">
+            <span class="menu-tag hot">Para Presente</span>
+            <img src="https://images.unsplash.com/photo-1554998171-89445e31c52b?auto=format&fit=crop&w=700&q=80" alt="Cesta Especial de Café da Manhã">
+          </div>
+          <div class="menu-card-body">
+            <span class="menu-card-cat">Presente Afetuoso</span>
+            <h3 class="menu-card-title">Cesta Afeto de Café da Manhã &amp; Mimos</h3>
+            <p class="menu-card-desc">Contém 1 bolo caseiro inteiro, pães de queijo artesanais, café especial moído, geleia da casa, biscoitinhos amanteigados e caneca.</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">R$ 149,00 <span>/ cesta</span></div>
+              <a href="https://wa.me/5521988601401?text=Ol%C3%A1!%20Gostaria%20de%20encomendar%20uma%20Cesta%20de%20Caf%C3%A9%20da%20Manh%C3%A3." target="_blank" rel="noopener" class="btn-menu-pedir">
+                Pedir
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULADORA INTERATIVA DE ENCOMENDAS -->
+  <section class="calculator-section" id="encomendas">
+    <div class="container">
+      <div class="calc-card-container">
+        <div class="calc-header">
+          <span class="badge-aroma">Simulador de Festa</span>
+          <h3>Planeje a Sua Encomenda de Bolo no Méier</h3>
+          <p>Escolha a ocasião e a quantidade de convidados para calcular o tamanho ideal do bolo para o seu momento doce.</p>
+        </div>
+
+        <div class="calc-grid">
+          <div>
+            <div class="calc-field-group">
+              <label for="calcOcasiao">Qual é a Ocasião?</label>
+              <select id="calcOcasiao" onchange="updateCalc()">
+                <option value="Aniversário em Família">Aniversário em Família</option>
+                <option value="Comemoração no Trabalho">Comemoração no Trabalho</option>
+                <option value="Café da Tarde Especial">Café da Tarde Especial</option>
+                <option value="Presente / Cesta de Afeto">Presente / Cesta de Afeto</option>
+              </select>
+            </div>
+
+            <div class="calc-field-group">
+              <label for="calcPessoas">Quantas Pessoas vão Saborear?</label>
+              <select id="calcPessoas" onchange="updateCalc()">
+                <option value="Pequeno (8 a 10 fatias)">Até 10 pessoas (Aro 15cm)</option>
+                <option value="Médio (15 a 20 fatias)" selected>15 a 20 pessoas (Aro 20cm)</option>
+                <option value="Grande (25 a 30 fatias)">25 a 30 pessoas (Aro 25cm)</option>
+                <option value="Festa Grande (40+ fatias)">Mais de 35 pessoas (2 andares)</option>
+              </select>
+            </div>
+
+            <div class="calc-field-group">
+              <label for="calcSabor">Sabor Favorito</label>
+              <select id="calcSabor" onchange="updateCalc()">
+                <option value="Cenoura com Brigadeiro Cascudo">Cenoura com Brigadeiro Cascudo</option>
+                <option value="Red Velvet com Cream Cheese">Red Velvet com Cream Cheese</option>
+                <option value="Nozes com Baba de Moça">Nozes com Baba de Moça</option>
+                <option value="Chocolate Belga Supremo">Chocolate Belga Supremo</option>
+                <option value="Fubá Cremoso com Goiabada">Fubá Cremoso com Goiabada</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <div class="calc-result-box">
+              <span class="calc-res-label">Tamanho Recomendado</span>
+              <div class="calc-res-size" id="resTamanho">Bolo Aro 20cm</div>
+              <p class="calc-res-desc" id="resDesc">
+                Rende em média <b>15 a 20 fatias generosas</b>. Perfeito para cantar parabéns com a família e amigos sem faltar bolo para ninguém!
+              </p>
+              <a href="#" id="calcWppBtn" target="_blank" rel="noopener" class="btn-calc-wpp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                Solicitar Orçamento no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O ESPAÇO NO MÉIER -->
+  <section class="space-section" id="espaco">
+    <div class="container">
+      <div class="space-grid">
+        <div class="space-content">
+          <span class="badge-aroma">Seu Refúgio Doce</span>
+          <h2>Um Cantinho Acolhedor na <span class="highlight">Rua Carolina Méier</span></h2>
+          <p>
+            Criamos o Café com Bolo &amp; Cia para ser aquela extensão da sua casa: cheirinho de bolo saindo do forno, barista atencioso chamando pelo nome, trilha sonora tranquila e ambiente perfeito para desacelerar da correria do Rio.
+          </p>
+
+          <ul class="space-amenities-list">
+            <li class="space-amenity-item">
+              <div class="space-amenity-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong>Wi-Fi Rápido &amp; Tomadas</strong>
+                <span>Traga seu notebook ou venha ler um livro saboreando um cappuccino.</span>
+              </div>
+            </li>
+            <li class="space-amenity-item">
+              <div class="space-amenity-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong>Pet Friendly com Carinho</strong>
+                <span>Seu companheiro de quatro patas é sempre bem-vindo na nossa área externa.</span>
+              </div>
+            </li>
+            <li class="space-amenity-item">
+              <div class="space-amenity-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong>Ambiente Climatizado &amp; Confortável</strong>
+                <span>Mesinhas gostosas para pausas de trabalho ou encontros de família.</span>
+              </div>
+            </li>
+          </ul>
+
+          <a href="https://maps.google.com/?q=Rua+Carolina+Méier,+38,+Méier,+Rio+de+Janeiro" target="_blank" rel="noopener" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            Ver no Google Maps
+          </a>
+        </div>
+
+        <div class="space-gallery-mosaic">
+          <div class="space-mosaic-img">
+            <img src="https://images.unsplash.com/photo-1554998171-89445e31c52b?auto=format&fit=crop&w=600&q=80" alt="Interior aconchegante da cafeteria">
+          </div>
+          <div class="space-mosaic-img tall">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Xícara de café especial extraída com carinho">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS REAIS -->
+  <section class="reviews-section" id="depoimentos">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-aroma">Carinho de Quem Frequenta</span>
+        <h2>O Que Dizem os Nossos <span class="highlight">Clientes do Méier</span></h2>
+        <p>A alegria de quem faz da nossa cafeteria o seu ponto de encontro favorito no bairro.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="review-text">
+            "O melhor bolo de cenoura com brigadeiro que já comi no Rio! A caldinha de casquinha crocante é inesquecível. E o Eugênio recebe todo mundo com uma simpatia ímpar."
+          </p>
+          <div class="reviewer-profile">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Cliente Beatriz Rocha" class="reviewer-avatar">
+            <div>
+              <span class="reviewer-name">Beatriz Rocha</span>
+              <span class="reviewer-tag">Moradora do Méier · Cliente Fiel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="review-text">
+            "O Cookie Shot é sensacional! Toda vez que tenho visita levo lá para provar. Além disso, o ambiente é super calmo para trabalhar e tomar um cappuccino bem feito."
+          </p>
+          <div class="reviewer-profile">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Cliente Rodrigo Valente" class="reviewer-avatar">
+            <div>
+              <span class="reviewer-name">Rodrigo Valente</span>
+              <span class="reviewer-tag">Frequenta com notebook</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="review-text">
+            "Encomendei o bolo de nozes para o aniversário da minha mãe e foi o maior sucesso da festa! Todo mundo elogiou a massa molhadinha e o recheio sem excesso de açúcar. Parabéns!"
+          </p>
+          <div class="reviewer-profile">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Cliente Fernanda Alencar" class="reviewer-avatar">
+            <div>
+              <span class="reviewer-name">Fernanda Alencar</span>
+              <span class="reviewer-tag">Encomenda de Festa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO E CONTATOS MÉIER -->
+  <section class="location-section" id="localizacao">
+    <div class="container">
+      <div class="location-card-container">
+        <div class="location-info-pane">
+          <span class="badge-aroma">Sua Pausa Gostosa</span>
+          <h3>Fácil de Achar na Carolina Méier</h3>
+          <p>
+            Localizada no coração do Méier, pertinho da estação e com ambiente tranquilo para fugir do barulho da rua.
+          </p>
+
+          <div class="location-data-list">
+            <div class="loc-data-item">
+              <div class="loc-icon-circle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="loc-text-col">
+                <strong>Endereço da Cafeteria</strong>
+                <span>Rua Carolina Méier, 38</span>
+                <span>Méier, Rio de Janeiro - RJ · CEP: 20780-000</span>
+              </div>
+            </div>
+
+            <div class="loc-data-item">
+              <div class="loc-icon-circle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="loc-text-col">
+                <strong>Horário de Funcionamento</strong>
+                <span>Segunda a Sexta: 08:30 às 18:30</span>
+                <span>Sábado: 09:00 às 16:00 (Domingo fechado)</span>
+              </div>
+            </div>
+
+            <div class="loc-data-item">
+              <div class="loc-icon-circle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="loc-text-col">
+                <strong>WhatsApp Direto (Eugênio)</strong>
+                <span>(21) 98860-1401</span>
+                <span>Pedidos rápidos, encomendas e reservas</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=Rua+Carolina+Méier,+38,+Méier,+Rio+de+Janeiro" target="_blank" rel="noopener" class="btn-primary" style="align-self: flex-start;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            Traçar Rota no Google Maps
+          </a>
+        </div>
+
+        <div class="location-map-pane">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2447196657924!2d-43.28014592379057!3d-22.90382343844627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997dc68f041763%3A0xe53a39e8fcab46b5!2sR.%20Carolina%20M%C3%A9ier%2C%2038%20-%20M%C3%A9ier%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020780-000!5e0!3m2!1spt-BR!2sbr!4v1710500000000!5m2!1spt-BR!2sbr" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa Café com Bolo & Cia Méier">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER ACONCHEGANTE -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <div class="brand-icon-box" style="width: 36px; height: 36px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
+          </div>
+          <span style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: #FFFFFF;">Café com Bolo &amp; Cia</span>
+        </div>
+        <p>
+          Cafeteria artesanal &amp; confeitaria de família. Bolos fofinhos de verdade, cafés especiais e acolhimento no coração do Méier.
+        </p>
+        <span class="badge-aroma" style="background: rgba(200, 125, 67, 0.2); color: #FCD34D; border-color: rgba(200, 125, 67, 0.4);">Desde 2018 Adoçando o Méier</span>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Navegação</h4>
+        <ul class="footer-links-list">
+          <li><a href="#cardapio">Cardápio Completo</a></li>
+          <li><a href="#cookie-shot">O Cookie Shot</a></li>
+          <li><a href="#encomendas">Encomendas de Bolos</a></li>
+          <li><a href="#espaco">O Espaço &amp; Conforto</a></li>
+          <li><a href="#depoimentos">Avaliações do Google</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Especialidades</h4>
+        <ul class="footer-links-list">
+          <li><a href="#cardapio">Cenoura com Calda Cascuda</a></li>
+          <li><a href="#cardapio">Red Velvet Cream Cheese</a></li>
+          <li><a href="#cardapio">Nozes com Baba de Moça</a></li>
+          <li><a href="#cardapio">Cookie Shot com Espresso</a></li>
+          <li><a href="#cardapio">Quiche Lorraine com Salada</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Venha nos Visitar</h4>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; color: #D3C4BC;">
+          Rua Carolina Méier, 38<br>
+          Méier · Rio de Janeiro - RJ<br>
+          CEP: 20780-000
+        </p>
+        <a href="https://wa.me/5521988601401?text=Ol%C3%A1%2C%20Eug%C3%AAnio%21%20Vi%20o%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" style="color: #FCD34D; font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          (21) 98860-1401
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 Café com Bolo &amp; Cia · Todos os direitos reservados.
+      </div>
+      <div>
+        Feito com afeto no Méier.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <div class="floating-whatsapp">
+    <span class="whatsapp-tooltip">Fale com o Eugênio no WhatsApp</span>
+    <a href="https://wa.me/5521988601401?text=Ol%C3%A1%2C%20Eug%C3%AAnio%21%20Vi%20o%20site%20do%20Caf%C3%A9%20com%20Bolo%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Pedir no WhatsApp">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </a>
+  </div>
+
+  <!-- MODAL DE ENCOMENDA DE BOLO -->
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeOrderModal()">&times;</button>
+      <span class="badge-aroma" style="margin-bottom: 0.5rem;">Encomenda Especial</span>
+      <h3>Bolo Inteiro para Sua Festa</h3>
+      <p>Preencha os detalhes e enviaremos seu pedido formatado diretamente para o WhatsApp do Café com Bolo.</p>
+
+      <form id="orderForm" onsubmit="handleOrderSubmit(event)">
+        <div class="form-group">
+          <label for="formNome">Seu Nome</label>
+          <input type="text" id="formNome" placeholder="Ex: Patrícia Lima" required>
+        </div>
+
+        <div class="form-group">
+          <label for="formSabor">Sabor do Bolo</label>
+          <select id="formSabor">
+            <option value="Cenoura com Brigadeiro Cascudo">Cenoura com Brigadeiro Cascudo</option>
+            <option value="Red Velvet com Cream Cheese">Red Velvet com Cream Cheese</option>
+            <option value="Nozes com Baba de Moça">Nozes com Baba de Moça</option>
+            <option value="Chocolate Belga Supremo">Chocolate Belga Supremo</option>
+            <option value="Fubá Cremoso com Goiabada">Fubá Cremoso com Goiabada</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="formData">Data Desejada</label>
+          <input type="date" id="formData" required>
+        </div>
+
+        <button type="submit" class="btn-submit-modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+          Confirmar Encomenda no WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPTS INTERATIVOS -->
+  <script>
+    // 1. FILTRO DO CARDÁPIO
+    function filterMenu(category, btnElement) {
+      const buttons = document.querySelectorAll('.menu-tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.menu-card');
+      cards.forEach(card => {
+        const catList = card.getAttribute('data-category') || '';
+        if (category === 'todos' || catList.includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 2. CALCULADORA DE ENCOMENDAS
+    function updateCalc() {
+      const pessoas = document.getElementById('calcPessoas').value;
+      const sabor = document.getElementById('calcSabor').value;
+      const ocasiao = document.getElementById('calcOcasiao').value;
+
+      const resTamanho = document.getElementById('resTamanho');
+      const resDesc = document.getElementById('resDesc');
+      const btn = document.getElementById('calcWppBtn');
+
+      let tamanhoText = 'Bolo Aro 20cm';
+      let descText = 'Rende em média <b>15 a 20 fatias generosas</b>. Perfeito para cantar parabéns com a família e amigos sem faltar bolo para ninguém!';
+
+      if (pessoas.includes('8 a 10')) {
+        tamanhoText = 'Bolo Aro 15cm';
+        descText = 'Rende em média <b>8 a 10 fatias</b>. Ideal para pequenas comemorações íntimas, café da tarde em família ou mesa de parabéns compacta.';
+      } else if (pessoas.includes('25 a 30')) {
+        tamanhoText = 'Bolo Aro 25cm';
+        descText = 'Rende em média <b>25 a 30 fatias</b>. Tamanho nobre para festas de aniversário, confraternizações de equipe e celebrações completas.';
+      } else if (pessoas.includes('40+')) {
+        tamanhoText = 'Bolo 2 Andares (ou 2 Bolos)';
+        descText = 'Rende em média <b>40 a 50 fatias</b>. Estrutura imponente para eventos maiores com sabores combinados.';
+      }
+
+      resTamanho.innerText = tamanhoText;
+      resDesc.innerHTML = descText;
+
+      const textoWpp = `Olá, Eugênio! Fiz uma simulação no site do Café com Bolo para uma encomenda:%0A%0A🎂 *Ocasião:* ${ocasiao}%0A👥 *Convidados:* ${pessoas}%0A🍰 *Sabor sugerido:* ${sabor}%0A📐 *Tamanho:* ${tamanhoText}%0A%0AGostaria de confirmar os valores e a disponibilidade de data!`;
+      btn.href = `https://wa.me/5521988601401?text=${textoWpp}`;
+    }
+
+    // Inicializar botão da calculadora
+    updateCalc();
+
+    // 3. MODAL DE ENCOMENDAS
+    function openOrderModal() {
+      document.getElementById('orderModal').classList.add('open');
+    }
+
+    function closeOrderModal() {
+      document.getElementById('orderModal').classList.remove('open');
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const nome = document.getElementById('formNome').value;
+      const sabor = document.getElementById('formSabor').value;
+      const data = document.getElementById('formData').value;
+
+      const texto = `Olá, Eugênio! Meu nome é *${nome}* e gostaria de encomendar um bolo inteiro no Café com Bolo & Cia.%0A%0A🍰 *Sabor:* ${sabor}%0A🗓️ *Data desejada:* ${data}%0A📍 *Retirada:* Rua Carolina Méier, 38`;
+      const url = `https://wa.me/5521988601401?text=${texto}`;
+      
+      closeOrderModal();
+      window.open(url, '_blank');
+    }
+
+    window.addEventListener('click', function(e) {
+      const modal = document.getElementById('orderModal');
+      if (e.target === modal) {
+        closeOrderModal();
+      }
+    });
+
+    // 4. MENU MOBILE
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '100%';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = '#FFFFFF';
+        links.style.padding = '1.5rem';
+        links.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+        links.style.borderBottom = '1px solid #EFE4D6';
+      }
+    }
+  </script>
+</body>
+</html>
